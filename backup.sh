@@ -1,6 +1,8 @@
 #!/bin/bash
 
-source ./function.sh
+CURRENT_DIR=$(cd "$(dirname "$0")"; pwd)
+
+source ${CURRENT_DIR}/function.sh
 
 #################################### You should configure the following variables ####################################
 

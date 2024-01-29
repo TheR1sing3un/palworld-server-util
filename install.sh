@@ -1,6 +1,8 @@
 #!/bin/bash
 
-source ./function.sh
+CURRENT_DIR=$(cd "$(dirname "$0")"; pwd)
+
+source ${CURRENT_DIR}/function.sh
 
 # Install Pal Server
 install_pal_server() {
@@ -26,7 +28,7 @@ check_cron_job_exist() {
 # Add crontab job, default is backup every hour 
 add_cron_job() {
     crontab -l > mycron
-    echo "0 * * * * backup.sh" >> mycron
+    echo "0 * * * * ${CURRENT_DIR}/backup.sh >> ${CUURENT_DIR}/backup.log" >> mycron
     crontab mycron
     rm mycron
 }
